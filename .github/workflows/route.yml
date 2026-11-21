@@ -1,0 +1,29 @@
+name: Automation Router
+
+on:
+  repository_dispatch:
+    types: [minute_pulse]
+  workflow_dispatch:
+
+concurrency:
+  group: automation-router
+  cancel-in-progress: false
+
+jobs:
+  route:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Execute router
+        env:
+          CLOUDFLARE_GATEWAY_URL: ${{ secrets.CLOUDFLARE_GATEWAY_URL }}
+          GATEWAY_SECRET_KEY: ${{ secrets.GATEWAY_SECRET_KEY }}
+          DISPATCH_TOKEN: ${{ secrets.DISPATCH_TOKEN }}
+        run: node index.js

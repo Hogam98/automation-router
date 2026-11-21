@@ -1,0 +1,40 @@
+{
+  "routes": [
+    {
+      "id": "community-bots",
+      "repo": "automation-community-bots",
+      "workflow": "execute.yml",
+      "ref": "main",
+      "intervalMinutes": 1,
+      "offsetMinutes": 0,
+      "enabled": true
+    },
+    {
+      "id": "anilist-notifier",
+      "repo": "automation-anilist-notifier",
+      "workflow": "execute.yml",
+      "ref": "main",
+      "intervalMinutes": 15,
+      "offsetMinutes": 0,
+      "enabled": true
+    },
+    {
+      "id": "tempo-notifier",
+      "repo": "automation-tempo-notifier",
+      "workflow": "execute.yml",
+      "ref": "main",
+      "intervalMinutes": 60,
+      "offsetMinutes": 0,
+      "enabled": true
+    },
+    {
+      "id": "location-tracker",
+      "repo": "automation-location-tracker",
+      "workflow": "execute.yml",
+      "ref": "main",
+      "intervalMinutes": 15,
+      "offsetMinutes": 0,
+      "enabled": true
+    }
+  ]
+}
