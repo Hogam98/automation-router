@@ -35,6 +35,15 @@
       "intervalMinutes": 15,
       "offsetMinutes": 0,
       "enabled": true
+    },
+    {
+      "id": "discord-voice-bridge",
+      "repo": "discord-voice-bridge",
+      "workflow": "execute.yml",
+      "ref": "main",
+      "intervalMinutes": 5,
+      "offsetMinutes": 0,
+      "enabled": false
     }
   ]
 }
